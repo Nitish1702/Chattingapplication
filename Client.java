@@ -16,7 +16,7 @@ public class Client implements ActionListener {
 
     static JFrame f = new JFrame();
 
-    static DataOutputStream dout;
+    static DataOutputStream dout = new DataOutputStream(System.out);
 
     Client() {
         f.setLayout(null);
@@ -161,10 +161,10 @@ public class Client implements ActionListener {
     public static void main(String[] args) {
         new Client();
         try {
-            Socket s = new Socket("127.0.0.1", 6001);
+            Socket s = new Socket("localhost", 6001);
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
-            
+
             while (true) {
                 a1.setLayout(new BorderLayout());
                 String msg = din.readUTF();
