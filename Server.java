@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.event.ChangeListener;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -160,7 +159,9 @@ public class Server implements ActionListener {
         new Server();
 
         try {
-            ServerSocket skt = new ServerSocket(6001);
+            ServerSocket skt = new ServerSocket(
+                    6001);
+            // skt.bind(null);
             while (true) {
                 Socket s = skt.accept();
                 DataInputStream din = new DataInputStream(s.getInputStream());

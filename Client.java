@@ -161,7 +161,7 @@ public class Client implements ActionListener {
     public static void main(String[] args) {
         new Client();
         try {
-            Socket s = new Socket("localhost", 6001);
+            Socket s = new Socket("103.255.235.50", 6001);
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
 
